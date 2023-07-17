@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Code Embed</title>
+</head>
+<body>
+  <pre id="output"></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.2/brython.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.2/brython_stdlib.js"></script>
+  <script type="text/python">
+    # Your Python code here
+    print("Hello, World!")
+    print(2 + 2)
+  </script>
+
+  <script type="text/javascript">
+    // Redirect Python's output to the HTML element
+    function redirect_stdout(text) {
+      document.getElementById("output").textContent += text;
+    }
+
+    window.brython({
+      stdout: redirect_stdout,
+      stderr: redirect_stdout
+    });
+  </script>
+</body>
+</html>
+
 
